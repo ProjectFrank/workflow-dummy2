@@ -1,15 +1,21 @@
 version: 2
 jobs:
   build:
+    docker:
+      - image: circleci/ruby:2.1-node-browsers
     steps:
       - run: echo 'build'
     
     
   test:
+    docker:
+      - image: circleci/ruby:2.1-node-browsers  
     steps:
       - run: echo 'test'
     
   deploy:
+    docker:
+      - image: circleci/ruby:2.1-node-browsers
     steps:
       - run: echo 'deploy'
     
