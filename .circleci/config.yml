@@ -1,14 +1,17 @@
 version: 2
 jobs:
   build:
-    run: echo 'build'
+    steps:
+      run: echo 'build'
     
     
   test:
-    run: echo 'test'
+    steps:
+      run: echo 'test'
     
   deploy:
-    run: echo 'deploy'
+    steps:
+      run: echo 'deploy'
     
 workflows:
   version: 2
