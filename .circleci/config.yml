@@ -1,0 +1,27 @@
+version: 2
+jobs:
+  build:
+    run: echo 'build'
+    
+  test:
+    run: echo 'test'
+    
+  deploy:
+    run: echo 'deploy'
+    
+workflows:
+  version: 2
+  my-workflow:
+    jobs:
+      - build
+      - test:
+        requires:
+          - build
+      - approval:
+        type: approval
+        requires:
+          - test
+      - deploy:
+        requires: 
+          - test
+          - approval
