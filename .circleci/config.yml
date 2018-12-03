@@ -6,7 +6,6 @@ jobs:
     steps:
       - run: echo 'build'
     
-    
   test:
     docker:
       - image: circleci/ruby:2.1-node-browsers  
