@@ -16,13 +16,13 @@ workflows:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
       - approval:
-        type: approval
-        requires:
-          - test
+          type: approval
+          requires:
+            - test
       - deploy:
-        requires: 
-          - test
-          - approval
+          requires: 
+            - test
+            - approval
