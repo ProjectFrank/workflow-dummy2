@@ -24,6 +24,10 @@ workflows:
   my-workflow:
     jobs:
       - build
+          filters:
+            tags:
+              only:
+                - my-tag
       - test:
           requires:
             - build
@@ -35,9 +39,6 @@ workflows:
             branches:
               only:
                 - master
-            tags:
-              only:
-                - my-tag
       - deploy:
           requires: 
             - test
