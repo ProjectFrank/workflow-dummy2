@@ -36,6 +36,5 @@ workflows:
               only:
                 - master
       - deploy:
-          requires: 
-            - test
+          requires:
             - approval
