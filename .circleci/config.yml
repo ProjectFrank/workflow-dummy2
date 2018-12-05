@@ -35,6 +35,9 @@ workflows:
             branches:
               only:
                 - master
+            tags:
+              only:
+                - my-tag
       - deploy:
           requires: 
             - test
