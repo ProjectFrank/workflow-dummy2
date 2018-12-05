@@ -31,6 +31,10 @@ workflows:
           type: approval
           requires:
             - test
+          filters:
+            branches:
+              only:
+                - master
       - deploy:
           requires: 
             - test
