@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  not-build:
     docker:
       - image: circleci/ruby:2.1-node-browsers
     steps:
@@ -23,14 +23,14 @@ workflows:
   version: 2
   my-workflow:
     jobs:
-      - build
+      - not-build
           filters:
             tags:
               only:
                 - my-tag
       - test:
           requires:
-            - build
+            - not-build
       - approval:
           type: approval
           requires:
