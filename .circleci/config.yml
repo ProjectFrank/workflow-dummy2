@@ -5,9 +5,9 @@ jobs:
       - image: circleci/ruby:2.1-node-browsers
     steps:
       - run: echo 'build' > build.txt
-      - run: mkdir /workspace && mv build.txt /workspace/
+      - run: mkdir -p workspace && mv build.txt workspace/
       - persist_to_workspace:
-          root: /workspace
+          root: workspace
           paths: build.txt
     
   test:
@@ -16,8 +16,8 @@ jobs:
     steps:
       - run: echo 'test'
       - attach_workspace:
-          at: /workspace
-      - run: find /workspace
+          at: workspace
+      - run: find workspace
     
   deploy:
     docker:
