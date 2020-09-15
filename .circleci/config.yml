@@ -8,6 +8,8 @@ jobs:
     executor:
       name: win/default
       version: previous
+    steps:
+      - run: echo hi
     
 workflows:
   version: 2
