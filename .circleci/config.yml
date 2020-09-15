@@ -1,11 +1,13 @@
 version: 2
+
+orbs:
+  win: circleci/windows@2.2.0
+
 jobs:
   build:
-    machine:
-      resource_class: windows.medium
-      image: windows-server-2019-vs2019:previous
-    steps:
-      - run: echo hi
+    executor:
+      name: win/default
+      version: previous
     
 workflows:
   version: 2
