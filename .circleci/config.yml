@@ -4,6 +4,8 @@ jobs:
     machine:
       resource-class: windows.medium
       image: windows-server-2019-vs2019:previous
+    steps:
+      - run: echo hi
     
 workflows:
   version: 2
