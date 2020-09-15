@@ -1,41 +1,13 @@
 version: 2
 jobs:
   build:
-    docker:
-      - image: circleci/ruby:2.1-node-browsers
-    steps:
-      - run: echo 'build'
+    executor:
+      name: win/default
+      version: previous
     
-    
-  test:
-    docker:
-      - image: circleci/ruby:2.1-node-browsers  
-    steps:
-      - run: echo 'test'
-    
-  deploy:
-    docker:
-      - image: circleci/ruby:2.1-node-browsers
-    steps:
-      - run: echo 'deploy'
     
 workflows:
   version: 2
   my-workflow:
     jobs:
       - build
-      - test:
-          requires:
-            - build
-      - approval:
-          type: approval
-          requires:
-            - test
-          filters:
-            branches:
-              only:
-                - master
-      - deploy:
-          requires: 
-            - test
-            - approval
