@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build:
     machine: true
-    resource_class: circleci/arm-test
+    resource_class: projectfrank/test
     steps:
       - run: echo hi
     
