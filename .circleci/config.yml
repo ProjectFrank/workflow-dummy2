@@ -5,7 +5,12 @@ jobs:
     machine: true
     resource_class: projectfrank/test
     steps:
-      - run: echo hi
+      - run: echo hi > hi
+      - run: echo hi2 > hi2
+      - store_artifacts:
+          path: hi
+      - store_artifacts:
+          path: hi2
     
 workflows:
   version: 2
