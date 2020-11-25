@@ -5,6 +5,7 @@ jobs:
     machine: true
     resource_class: projectfrank/test
     steps:
+      - checkout
       - run: echo hi > hi
       - run: echo hi2 > hi2
       - store_artifacts:
