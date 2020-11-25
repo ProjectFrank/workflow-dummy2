@@ -11,6 +11,10 @@ jobs:
           path: hi
       - store_artifacts:
           path: hi2
+      - store_test_results:
+          path: test-results
+      - store_test_results
+          path: test-results2
     
 workflows:
   version: 2
