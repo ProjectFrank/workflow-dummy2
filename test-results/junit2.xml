@@ -1,0 +1,7 @@
+<testsuite tests="3">
+    <testcase classname="foo1" name="AASuccessfulTest"/>
+    <testcase classname="foo2" name="AAnotherSuccessfulTest"/>
+    <testcase classname="foo3" name="AAFailingTest">
+        <failure type="NNotEnoughFoo"> details about failure </failure>
+    </testcase>
+</testsuite>
