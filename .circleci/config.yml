@@ -3,7 +3,6 @@ version: 2.1
 jobs:
   build:
     machine: true
-    resource_class: projectfrank/test
     steps:
       - checkout
       - run: echo hi > hi
