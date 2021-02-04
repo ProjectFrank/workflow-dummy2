@@ -2,19 +2,12 @@ version: 2.1
 
 jobs:
   build:
-    machine: true
+    docker:
+      - image: cimg/base:2020.01
+    resource_class: small
     steps:
       - checkout
-      - run: echo hi > hi
-      - run: echo hi2 > hi2
-      - store_artifacts:
-          path: hi
-      - store_artifacts:
-          path: hi2
-      - store_test_results:
-          path: test-results
-      - store_test_results:
-          path: test-results2
+      - run: sleep 600
     
 workflows:
   version: 2
