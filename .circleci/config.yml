@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run: git rev-parse HEAD
       - run: echo $CIRCLE_TAG
-      - run: echo $CIRCLE_SHA1
+      - run: echo $CIRCLE_SHA1 
     
 workflows:
   version: 2
