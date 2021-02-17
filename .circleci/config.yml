@@ -7,11 +7,9 @@ jobs:
     resource_class: small
     steps:
       - checkout
-      - run: |
-          while true; do
-            echo -n '.'
-            sleep 1
-          done
+      - run: git rev-parse HEAD
+      - run: echo $CIRCLE_TAG
+      - run: echo $CIRCLE_SHA1
     
 workflows:
   version: 2
