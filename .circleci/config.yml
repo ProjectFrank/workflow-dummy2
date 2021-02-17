@@ -15,4 +15,7 @@ workflows:
   version: 2
   my-workflow:
     jobs:
-      - build
+      - build:
+          filters:
+            tags:
+              only: /.*/
