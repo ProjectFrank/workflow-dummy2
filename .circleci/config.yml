@@ -2,9 +2,8 @@ version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: cimg/base:2020.01
-    resource_class: small
+    machine: true
+    resource_class: gpu.small
     steps:
       - checkout
       - run: git rev-parse HEAD
