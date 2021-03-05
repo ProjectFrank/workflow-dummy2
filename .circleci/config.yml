@@ -1,20 +1,21 @@
 version: 2.1
 
 jobs:
-  build:
-    macos: # executor type
-      xcode: 11.3.0
+
+  npm-example:
+
+    docker:
+
+      - image: cimg/base:stable
+
     steps:
-      - checkout
-      - run: git rev-parse HEAD
-      - run: echo $CIRCLE_TAG
-      - run: echo $CIRCLE_SHA1 
-    
+
+      - add_ssh_keys
+
 workflows:
-  version: 2
-  my-workflow:
+
+  wf:
+
     jobs:
-      - build:
-          filters:
-            tags:
-              only: /.*/
+
+      - npm-example
