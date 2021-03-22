@@ -5,8 +5,8 @@ orbs:
 
 jobs:
   build:
-    macos: # executor type
-      xcode: 11.3.0
+    docker:
+      - image: ubuntu:latest
     steps:
       - checkout
       - run: git rev-parse HEAD
