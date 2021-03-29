@@ -1,23 +1,14 @@
-# version: 2.1
-
-orbs:
-  win: circleci/windows@2.2.0
+version: 2.1
 
 jobs:
   build:
-    docker:
-      - image: ubuntu:latest
+    machine: true
+    resource_class: projectfrank/test
     steps:
       - checkout
-      - run: git rev-parse HEAD
-      - run: echo $CIRCLE_TAG
-      - run: echo $CIRCLE_SHA1 
     
 workflows:
   version: 2
   my-workflow:
     jobs:
-      - build:
-          filters:
-            tags:
-              only: /.*/
+      - build
