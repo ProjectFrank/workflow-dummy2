@@ -4,7 +4,7 @@ jobs:
   build:
     machine: true
     steps:
-      - echo hi
+      - run: echo hi
     
 workflows:
   version: 2
