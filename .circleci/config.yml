@@ -2,10 +2,10 @@ version: 2.1
 
 jobs:
   build:
-    machine: true
-    resource_class: projectfrank/test
+    docker:
+      - image: ubuntu:latest
     steps:
-      - checkout
+      - setup_remote_docker
     
 workflows:
   version: 2
