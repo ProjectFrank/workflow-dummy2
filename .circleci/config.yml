@@ -11,3 +11,4 @@ workflows:
   my-workflow:
     jobs:
       - build
+      - build
