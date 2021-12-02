@@ -2,16 +2,15 @@ version: 2.1
 
 jobs:
   build:
-    machine: true
+    docker:
+      image: ubuntu:latest
     steps:
       - run: echo hi
+      - setup_remote_docker:
+          docker_layer_caching: true
     
 workflows:
   version: 2
   my-workflow:
     jobs:
-      - build:
-          context:
-            - my-context
-            - Foo
       - build
