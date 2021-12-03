@@ -2,6 +2,7 @@ version: 2.1
 
 jobs:
   build:
+    parallelism: 10000
     docker:
       - image: ubuntu:latest
     steps:
