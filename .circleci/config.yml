@@ -2,13 +2,15 @@ version: 2.1
 
 jobs:
   build:
-    parallelism: 10000
     docker:
       - image: ubuntu:latest
     steps:
       - run: echo hi
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - run: mkdir my_workspace; touch my_workspace/foo
+      - persist_to_workspace:
+          root: my_workspace
+          paths:
+            - foo
     
 workflows:
   version: 2
