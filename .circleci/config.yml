@@ -11,6 +11,9 @@ jobs:
           root: my_workspace
           paths:
             - foo
+      - run: touch /tmp/my+artifact
+      - store_artifacts:
+          path: /tmp/my+artifact
     
 workflows:
   version: 2
