@@ -2,13 +2,17 @@ version: 2.1
 
 jobs:
   build:
-    macos:
-      xcode: 12.5.1
-    resource_class: macos.x86.medium.gen2
+    parameters:
+      greeting:
+        type: string
+        default: hello
+      phrase:
+        type: string
+        default: << parameters.greeting >> world
+    docker:
+      - image: cimg/base:2022.03
     steps:
-      - run: which gzip
-      - run: which tar
-      - run: echo $PATH
+      - run: echo << parameters.phrase >>
     
 workflows:
   version: 2
